@@ -88,7 +88,7 @@ function Display() {
     const textTwo = useRef(null);
 
     useLayoutEffect(() => {
-        if (container.current) {
+
           gsap.timeline({
             scrollTrigger: {
               trigger: container.current,
@@ -98,7 +98,7 @@ function Display() {
             //   markers: true,
             },
           }).fromTo(textOne.current, { x: 0 }, { x: "20%" }, "key1").fromTo(textTwo.current, { x: 0 }, { x: "-20%" }, "key1");
-        }
+        
       }, []);
       
 
