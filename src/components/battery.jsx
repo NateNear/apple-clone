@@ -49,7 +49,7 @@ function Battery() {
   }, []);
 
   return (
-    <Section>
+    <Section id="battery">
       <Text ref={textRef}>
         Go all day with a single charge.
       </Text>
