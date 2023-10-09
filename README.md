@@ -1,5 +1,7 @@
 # apple-clone
+(YET TO MAKE IT RESPONSIVE)
 
+![image](https://github.com/NateNear/apple-clone/assets/92938055/099e749f-88c6-49e6-b4f5-f41cdb5a7791)
 
 ![image](https://github.com/NateNear/apple-clone/assets/92938055/23ab6464-5e21-4077-b848-190b276f4fe5)
 
