@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
 // import React from 'react'
+import { Environment, useGLTF } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
 import gsap from 'gsap';
-import { useLayoutEffect, useRef } from 'react';
+import { Suspense, useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
+import Model from '../assets/3D-Model/Scene2';
+import Model2 from '../assets/3D-Model/Scene2';
+
 
 const Section = styled.section`
   width: 100vw;
@@ -40,16 +46,17 @@ const Center = styled.div`
   font-size: var(--fontxxl);
   text-transform: uppercase;
   filter: brightness(0.85);
-
 `;
 
 function ColorVariants() {
-
+  
   const Ref = useRef(null);
   const TextRef = useRef(null);
   const LeftRef = useRef(null);
   const RightRef = useRef(null);
-
+  
+  const { nodes, materials } = useGLTF('/scene.gltf');
+  
   useLayoutEffect(() => {
 
     let RightElem = RightRef.current;
@@ -59,7 +66,7 @@ function ColorVariants() {
     let Elem = Ref.current;
 
     let updateColor = (color, text, rgbColor)=> {
-
+      materials.Body.color.set(color);
       TextElem.innerText = text;
       LeftElem.style.backgroundColor = `rgba(${rgbColor}, 0.4)`;
       RightElem.style.backgroundColor = `rgba(${rgbColor}, 0.8)`;
@@ -129,10 +136,18 @@ function ColorVariants() {
   return (
     <Section ref={Ref}>
       <Left ref={LeftRef}/>
-      <Center ref={TextRef}>
-        Sierra Blue
-      </Center>
+      <Center ref={TextRef}/>
       <Right ref={RightRef}/>
+
+      <Canvas camera={{fov:6.5}}>
+            <ambientLight/>
+            <directionalLight/>
+            <Suspense fallback={null}>
+                <Model2/>
+            <Environment preset ="sunset"/>
+            </Suspense>
+                {/* <OrbitControls/> */}
+        </Canvas>
     </Section>
   )
 }

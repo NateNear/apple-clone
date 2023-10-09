@@ -8,6 +8,7 @@ import ProcessorSection from "./components/processor"
 import Battery from "./components/battery"
 import Battery2 from "./components/battery2"
 import ColorVariant from "./components/colorVariants"
+// import CameraSection from "./components/cameraVid"
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <Battery/>
       <Battery2/>
       <ColorVariant/>
+      {/* <CameraSection/> */}
     </>
   )
 }

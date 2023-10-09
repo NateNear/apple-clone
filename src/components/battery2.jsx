@@ -60,7 +60,7 @@ function Battery2() {
 })
 
   return (
-    <Section>
+    <Section >
         <Battery ref={battery}>
           <li />
           <li />

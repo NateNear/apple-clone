@@ -43,7 +43,7 @@ function Battery() {
       },
     });
 
-    tl.to(textElement, { fontSize: "10rem", scale: 0.5, opacity: 40, duration: 10 });
+    tl.to(textElement, { fontSize: "15rem", scale: 1.1, opacity: 40, duration: 10 });
 
 
   }, []);
@@ -51,7 +51,7 @@ function Battery() {
   return (
     <Section id="battery">
       <Text ref={textRef}>
-        Go all day with a single charge.
+        Go all out.
       </Text>
     </Section>
   );
